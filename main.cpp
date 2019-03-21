@@ -17,7 +17,7 @@ bool runProgram = true;     //run program while true
 std::string userAction;     //reusable variable for taking user input
 
 //declare functions
-void printBlock(std::string message, bool endLine = 0);
+void PrintBlock(std::string message, bool endLine = 0);
 std::string CapString(std::string s, bool allCap = 0);
 int RecipeCount (std::string ingredient = "Any");
 
@@ -120,7 +120,7 @@ int main(int argc, const char * argv[]) {
     bool hasDisplayed = false;   //has our chef chosen a meal?
     int numRecipes = RecipeCount();
 
-    printBlock("Welcome to HomeCook", 1);
+    PrintBlock("Welcome to HomeCook", 1);
     std::cout << "You have " << numRecipes << " recipes at your finger tips.\n";
     std::cout << "So don your apron and let's get cracking.\n\n";
     std::cout << "First up, do you have access to an oven today?\n: ";
@@ -166,11 +166,11 @@ int main(int argc, const char * argv[]) {
                         std::cout << "\n\n";
                         std::string recipeName = recipesVector[i][1];
                         recipeName = CapString(recipeName,1);
-                        printBlock(recipeName);
-                        printBlock("INGREDIENTS:");
-                        printBlock(recipesVector[i][3]);
-                        printBlock("\nCOOKING INSTRUCTIONS:");
-                        printBlock(recipesVector[i][4], 1);
+                        PrintBlock(recipeName);
+                        PrintBlock("INGREDIENTS:");
+                        PrintBlock(recipesVector[i][3]);
+                        PrintBlock("\nCOOKING INSTRUCTIONS:");
+                        PrintBlock(recipesVector[i][4], 1);
                         hasDisplayed = true;
                     }
                 }
@@ -178,15 +178,15 @@ int main(int argc, const char * argv[]) {
             i++;
         } while (i < recipesVector.size() && hasDisplayed == false);
         if (!found){
-            printBlock("");
+            PrintBlock("");
             if (!ovenOkay) {
                 std::cout << "Sorry no " << userIngredient << " recipes without an oven found.\n";
             } else {
                 std::cout << "Sorry no " << userIngredient << " recipes found.\n";
             }
-            printBlock("");
+            PrintBlock("");
         } else if (!hasDisplayed) {
-            printBlock("That's all the matching recipes we've got.") ;
+            PrintBlock("That's all the matching recipes we've got.") ;
         }
         std::cout << "Search for more recipes? y/n \n:";
         found = false;
@@ -202,7 +202,7 @@ int main(int argc, const char * argv[]) {
     return 0;
 }
 
-void printBlock(std::string message, bool endLine){
+void PrintBlock(std::string message, bool endLine){
     std::cout << "---------------------------------------------------------\n";
     std::cout << message << "\n";
     if (endLine)
