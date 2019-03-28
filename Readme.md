@@ -1,5 +1,5 @@
 # Welcome to HomeCook.
-Inspired for CodeCademy.com C++ Coding Challenge.
+Inspired for CodeCademy.com C++ Coding Challenge.<br>
 Built by Eric Gross and Sinan Sevgi.
 
 ## Recipes inspired from ingredient delivery service HomeChef
