@@ -4,6 +4,6 @@ CharredTomatoes.txt,Tomatoe,Charred Tomatoes,NO
 GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce,NO
 BakedChicken.txt,Chicken,Coq-au-vin Baked Chicken,YES
 CharGrilledCarrots.txt,Carrot,Char Grilled Carrots,NO
-CitrusMisoSalmon,Salmon,Citrus-Miso Salmon,NO
+CitrusMisoSalmon.txt,Salmon,Citrus-Miso Salmon,NO
 RosatedBrusselSprouts.txt,Brussel Sprouts,Bang-bang roasted Brussel Sprouts,YES
 RoastedMushrooms.txt,Mushroom,Thyme Roasted Mushrooms,YES
