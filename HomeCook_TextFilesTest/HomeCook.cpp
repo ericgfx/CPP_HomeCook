@@ -112,16 +112,15 @@ int main()
 // Reads the index file and convert it to vector
 vector<vector<string>> FileReader()
 {
-    string veri;
-    vector<vector<string>> ana;
-    vector<string> dumper;
-    ifstream inDos("index.txt");
-    while (!inDos.eof())
+    string text;
+    vector<vector<string>> mainVector;
+    ifstream mainFile("index.txt");
+    while (!mainFile.eof())
     {
-        getline (inDos, veri);
-        ana.push_back(StringSplitter(veri));
+        getline (mainFile, text);
+        mainVector.push_back(StringSplitter(text));
     }
-    return ana;
+    return mainVector;
 }
 
 //Splits strings from ',' character and appends each one to vector
