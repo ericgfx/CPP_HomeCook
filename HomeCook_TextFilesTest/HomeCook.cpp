@@ -22,6 +22,7 @@ void PrintBlock(string message, bool endLine = 0);
 string CapString(string s, bool allCap = 0);
 vector<vector<string>> FileReader();
 vector<string> StringSplitter(string);
+vector<vector<string>>  RecipeFinder (string);
 int RecipeCount (string ingredient);
 void RecipePrinter (string);
 void TitlePrinter ();
@@ -47,6 +48,7 @@ int main()
     bool found = false;          //has a meal been found?
     bool ovenOkay = true;        //will chef use recipes that use an oven?
     int numRecipes = recipesVector.size()-1;
+    vector<vector<string>> foundRecipes;
     TitlePrinter ();
 
 
@@ -77,7 +79,14 @@ int main()
         cin >> userIngredient;
         userIngredient = CapString(userIngredient);
         int numSpecRecipes = RecipeCount(userIngredient);
+        foundRecipes = RecipeFinder(userIngredient);
         cout << "There are " << numSpecRecipes << " tastey recipes to get your " << userIngredient << " fix.\n\n";
+        for (int f = 0; f<foundRecipes.size(); f++)
+        {
+            PrintBlock(foundRecipes[f][2]);
+        }
+        PrintBlock(" ");
+
 
 
         if (numSpecRecipes != 0)
@@ -103,7 +112,7 @@ int main()
                             cout << "\n\n";
                             string recipeName = recipesVector[i][2];
                             recipeName = CapString(recipeName,1);
-                            PrintBlock(recipeName);
+//                            PrintBlock(recipeName);
                             RecipePrinter(recipesVector[i][0]);
                             hasDisplayed = true;
                         }
@@ -178,11 +187,11 @@ vector<string> StringSplitter(string splitMe)
 //Function to improve design in console
 void PrintBlock(string message, bool endLine)
 {
-    cout << "-----------------------------------------------------------\n";
+    cout << "------------------------------------------------------------\n";
     cout << message << "\n";
     if (endLine)
     {
-        cout << "-----------------------------------------------------------\n";
+        cout << "------------------------------------------------------------\n";
     }
 }
 
@@ -213,6 +222,20 @@ int RecipeCount (string ingredient)
     }
     return count;
 }
+// Returns number of recipes that can be prepared with given ingredient
+vector<vector<string>>  RecipeFinder (string ingredient)
+{
+    int count = 0;
+    vector<vector<string>> tempVector;
+    for (int i = 0; i<recipesVector.size()-1; i++)
+    {
+        if (ingredient == recipesVector[i][1] || ingredient == "Any")
+        {
+            tempVector.push_back(recipesVector[i]);
+        }
+    }
+    return tempVector;
+}
 
 //Prints recipe txt file
 //Edit this function if you want to change printing style of recipe
@@ -227,6 +250,7 @@ void RecipePrinter (string recipeName)
         cout<<line<<endl;
     }
 }
+
 
 void TitlePrinter ()
 {
