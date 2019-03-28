@@ -20,9 +20,11 @@ using namespace std;
 //declare functions
 void PrintBlock(string message, bool endLine = 0);
 string CapString(string s, bool allCap = 0);
-vector<vector<string>> FileReader();
+vector<vector<string> > FileReader();
 vector<string> StringSplitter(string);
-vector<vector<string>>  RecipeFinder (string);
+vector<vector<string> >  RecipeFinder (string);
+//vector<vector<string> > Space between angle brackets necessary for compiling with Microsoft C++ Compiler
+//otherwise it will not compile the code
 int RecipeCount (string ingredient);
 void RecipePrinter (string);
 void TitlePrinter ();
@@ -34,8 +36,8 @@ bool runProgram = true;     //run program while true
 string userAction;     //reusable variable for taking user input
 //main 2D Vector
 //Recipe filename, Main ingredient, Recipe name, Need Oven
-
-vector<vector<string>> recipesVector = FileReader();
+otherwise it will not compiling the code
+vector<vector<string> > recipesVector = FileReader();
 
 
 /*************************************************/
@@ -48,7 +50,7 @@ int main()
     bool found = false;          //has a meal been found?
     bool ovenOkay = true;        //will chef use recipes that use an oven?
     int numRecipes = recipesVector.size()-1;
-    vector<vector<string>> foundRecipes;
+    vector<vector<string> > foundRecipes;
     TitlePrinter ();
 
 
@@ -158,10 +160,10 @@ int main()
 
 }
 // Reads the index file and convert it to vector
-vector<vector<string>> FileReader()
+vector<vector<string> > FileReader()
 {
     string text;
-    vector<vector<string>> mainVector;
+    vector<vector<string> > mainVector;
     ifstream mainFile("index.txt");
     while (!mainFile.eof())
     {
@@ -200,11 +202,11 @@ string CapString(string s, bool allCap)
 {
     if (!allCap)
     {
-        use_facet<ctype<char>>(locale()).toupper(&s[0], &s[1]);
+        use_facet<ctype<char> >(locale()).toupper(&s[0], &s[1]);
     }
     else
     {
-        use_facet<ctype<char>>(locale()).toupper(&s[0], &s[0] + s.size());
+        use_facet<ctype<char> >(locale()).toupper(&s[0], &s[0] + s.size());
     }
     return s;
 }
@@ -223,10 +225,10 @@ int RecipeCount (string ingredient)
     return count;
 }
 // Returns number of recipes that can be prepared with given ingredient
-vector<vector<string>>  RecipeFinder (string ingredient)
+vector<vector<string> >  RecipeFinder (string ingredient)
 {
     int count = 0;
-    vector<vector<string>> tempVector;
+    vector<vector<string> > tempVector;
     for (int i = 0; i<recipesVector.size()-1; i++)
     {
         if (ingredient == recipesVector[i][1] || ingredient == "Any")
@@ -242,7 +244,7 @@ vector<vector<string>>  RecipeFinder (string ingredient)
 void RecipePrinter (string recipeName)
 {
     string path="recipes/"+recipeName;
-    ifstream recipeFile(path);
+    ifstream recipeFile(path.c_str());//c_str() necessary for Microsoft C++ Compiler
     string line;
     while (!recipeFile.eof())
     {
