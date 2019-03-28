@@ -1,3 +1,12 @@
+//
+//  main.cpp
+//  HomeCook
+//
+//  Created by EricG and Sinan. XCode on MacBookPro on 3/16/19.
+//  Copyright © 2019 EricG MacBookPro. All rights reserved.
+//  CodeCademy 2019 CPP-Challenge
+
+
 #include <iostream>
 #include <vector>
 #include <fstream>
@@ -15,14 +24,17 @@ vector<vector<string>> FileReader();
 vector<string> StringSplitter(string);
 int RecipeCount (string ingredient);
 void RecipePrinter (string);
+void TitlePrinter ();
+
 
 
 //global variables
 bool runProgram = true;     //run program while true
 string userAction;     //reusable variable for taking user input
+//main 2D Vector
+//Recipe filename, Main ingredient, Recipe name, Need Oven
 
 vector<vector<string>> recipesVector = FileReader();
-
 
 
 /*************************************************/
@@ -33,13 +45,30 @@ int main()
 {
     bool hasDisplayed = false;   //has our chef chosen a meal?
     bool found = false;          //has a meal been found?
+    bool ovenOkay = true;        //will chef use recipes that use an oven?
+    int numRecipes = recipesVector.size()-1;
+    TitlePrinter ();
+
 
 
 
     PrintBlock("Welcome to HomeCook", 1);
-    cout << "We have "<<recipesVector.size()-1<<" recipes at your finger tips.\n";
+    cout << "We have "<<numRecipes<<" recipes at your finger tips.\n";
     cout << "So don your frilliest apron and let's get cracking.\n\n";
-//    cout << "First up, do you have access to an oven today?\n: ";
+    cout << "First up, do you have access to an oven today?\n: ";
+    cin >> userAction;
+    userAction = userAction[0];
+    userAction = CapString(userAction);
+    if (userAction == "N")
+    {
+        ovenOkay = false;
+        std::cout << "Roger that, you're roughing it.\n";
+    }
+    else
+    {
+        ovenOkay = true;
+        std::cout << "Okay that gives us options...\n";
+    }
 
     while (runProgram)
     {
@@ -61,20 +90,23 @@ int main()
             {
                 if (userIngredient == recipesVector[i][1] || userIngredient == "Any")
                 {
-
-                    found = true;
-                    cout << recipesVector[i][2] << "? ";
-                    cin >> userAction;
-                    userAction = userAction[0];
-                    userAction = CapString(userAction);
-                    if (userAction == "Y")
+                    if (ovenOkay || recipesVector[i][3] == "NO")
                     {
-                        cout << "\n\n";
-                        string recipeName = recipesVector[i][2];
-                        recipeName = CapString(recipeName,1);
-                        PrintBlock(recipeName);
-                        RecipePrinter(recipesVector[i][0]);
-                        hasDisplayed = true;
+
+                        found = true;
+                        cout << recipesVector[i][2] << "? ";
+                        cin >> userAction;
+                        userAction = userAction[0];
+                        userAction = CapString(userAction);
+                        if (userAction == "Y")
+                        {
+                            cout << "\n\n";
+                            string recipeName = recipesVector[i][2];
+                            recipeName = CapString(recipeName,1);
+                            PrintBlock(recipeName);
+                            RecipePrinter(recipesVector[i][0]);
+                            hasDisplayed = true;
+                        }
                     }
                 }
 
@@ -83,11 +115,18 @@ int main()
 
             }
 
-            while (i < recipesVector.size()-1 && hasDisplayed == false);
+            while (i < numRecipes && hasDisplayed == false);
             if (!found)
             {
                 PrintBlock("");
-                cout << "Sorry no " << userIngredient << " recipes found.\n";
+                if (!ovenOkay)
+                {
+                    cout << "Sorry no " << userIngredient << " recipes without an oven found.\n";
+                }
+                else
+                {
+                    cout << "Sorry no " << userIngredient << " recipes found.\n";
+                }
                 PrintBlock("");
             }
             else if (!hasDisplayed)
@@ -139,11 +178,11 @@ vector<string> StringSplitter(string splitMe)
 //Function to improve design in console
 void PrintBlock(string message, bool endLine)
 {
-    cout << "---------------------------------------------------------\n";
+    cout << "-----------------------------------------------------------\n";
     cout << message << "\n";
     if (endLine)
     {
-        cout << "---------------------------------------------------------\n";
+        cout << "-----------------------------------------------------------\n";
     }
 }
 
@@ -186,4 +225,15 @@ void RecipePrinter (string recipeName)
         getline (recipeFile, line);
         cout<<line<<endl;
     }
+}
+
+void TitlePrinter ()
+{
+    cout<<" #     #                       #####                       "<<endl;
+    cout<<" #     #  ####  #    # ###### #     #  ####   ####  #    # "<<endl;
+    cout<<" #     # #    # ##  ## #      #       #    # #    # #   #  "<<endl;
+    cout<<" ####### #    # # ## # #####  #       #    # #    # ####   "<<endl;
+    cout<<" #     # #    # #    # #      #       #    # #    # #  #   "<<endl;
+    cout<<" #     # #    # #    # #      #     # #    # #    # #   #  "<<endl;
+    cout<<" #     #  ####  #    # ######  #####   ####   ####  #    # "<<endl;
 }

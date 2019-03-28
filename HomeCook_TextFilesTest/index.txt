@@ -1,4 +1,5 @@
-GarlicLemonSalmon.txt,Salmon,Garlic And Lemon Crusted Salmon
-CreamedKale.txt,Kale,Creamed Kale
-CharredTomatoes.txt,Tomatoe,Charred Tomatoes
-GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce
+GarlicLemonSalmon.txt,Salmon,Garlic And Lemon Crusted Salmon,NO
+CreamedKale.txt,Kale,Creamed Kale,NO
+CharredTomatoes.txt,Tomatoe,Charred Tomatoes,NO
+GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce,NO
+BakedChicken.txt,Chicken,Coq-au-vin Baked Chicken,YES
