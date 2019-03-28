@@ -167,7 +167,7 @@ int RecipeCount (string ingredient)
     int count = 0;
     for (int i = 0; i<recipesVector.size()-1; i++)
     {
-        if (ingredient == recipesVector[i][1])
+        if (ingredient == recipesVector[i][1] || ingredient == "Any")
         {
             count++;
         }
