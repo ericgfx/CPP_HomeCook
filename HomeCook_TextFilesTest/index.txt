@@ -1,4 +1,4 @@
-GarlicLemonSalmon.txt,Salmon,Garlic And Lemon,Crusted Salmon
+GarlicLemonSalmon.txt,Salmon,Garlic And Lemon Crusted Salmon
 CreamedKale.txt,Kale,Creamed Kale
 CharredTomatoes.txt,Tomatoe,Charred Tomatoes
 GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce
