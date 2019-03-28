@@ -215,6 +215,7 @@ int RecipeCount (string ingredient)
 }
 
 //Prints recipe txt file
+//Edit this function if you want to change printing style of recipe
 void RecipePrinter (string recipeName)
 {
     string path="recipes/"+recipeName;
