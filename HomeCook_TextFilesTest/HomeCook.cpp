@@ -252,7 +252,7 @@ void RecipePrinter (string recipeName)
     }
 }
 
-
+//Prints application title
 void TitlePrinter ()
 {
     cout<<" #     #                       #####                       "<<endl;
