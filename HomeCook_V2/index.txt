@@ -9,3 +9,4 @@ RoastedBrusselSprouts.txt,Brussel Sprouts,Bang-bang roasted Brussel Sprouts,YES
 RoastedMushrooms.txt,Mushroom,Thyme Roasted Mushrooms,YES
 ChickenPoblano.txt,Chicken,Chicken with Creamed Poblano Sauce,NO
 TortillaChicken.txt,Chicken,Tortilla Chicken,YES
+FriedAnchovy.txt,Anchovy,Fried Anchovy,NO
