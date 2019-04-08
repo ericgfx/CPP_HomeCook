@@ -11,3 +11,4 @@ This app is helpful for those looking to select a favorite. I like to cook. Ofte
  ..if you don't have a particular main ingredient in mind, this will return the whole list.
  
  Now grab your apron, and get cooking. 
+![HomeCookCharlie_egd](http://ericgrossdesign.com/HomeCookCharlie.JPG)
