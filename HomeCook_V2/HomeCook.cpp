@@ -2,7 +2,7 @@
 //  main.cpp
 //  HomeCook
 //
-//  Created by EricG and Sinan. XCode on MacBookPro on 3/16/19.
+//  Created by EricG and Sinan. XCode on MacBookPro on 4/11/19.
 //  Copyright © 2019 EricG MacBookPro. All rights reserved.
 //  CodeCademy 2019 CPP-Challenge
 
