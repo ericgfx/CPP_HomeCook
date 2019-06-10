@@ -1,12 +1,16 @@
-GarlicLemonSalmon.txt,Salmon,Garlic And Lemon Crusted Salmon,NO
-CreamedKale.txt,Kale,Creamed Kale,NO
-CharredTomatoes.txt,Tomatoes,Charred Tomatoes,NO
-GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce,NO
 BakedChicken.txt,Chicken,Coq-au-vin Baked Chicken,YES
 CharGrilledCarrots.txt,Carrot,Char Grilled Carrots,NO
+CharredTomatoes.txt,Tomatoes,Charred Tomatoes,NO
+ChickenPoblano.txt,Chicken,Chicken with Creamed Poblano Sauce,NO
+ChickenThyme.txt,Chicken,Chicken with Pesto Thyme Cream, No
 CitrusMisoSalmon.txt,Salmon,Citrus-Miso Salmon,NO
+CreamedKale.txt,Kale,Creamed Kale,NO
+FriedAnchovy.txt,Anchovy,Fried Anchovy,NO
+GarlicLemonSalmon.txt,Salmon,Garlic And Lemon Crusted Salmon,NO
+GrilledSalmon.txt,Salmon,Grilled Salmon with Lemon-Dill Yogurt Sauce,NO
+PiriPiriTurkeyPeppers.txt,Turkey,Piri Piri Turkey Stuffed Peppers, YES
+RoastedAsparagus.txt,Asparagus,Roasted Asparagus with Vinagrette,YES
 RoastedBrusselSprouts.txt,Brussel Sprouts,Bang-bang roasted Brussel Sprouts,YES
 RoastedMushrooms.txt,Mushroom,Thyme Roasted Mushrooms,YES
-ChickenPoblano.txt,Chicken,Chicken with Creamed Poblano Sauce,NO
+SautedZucchini.txt,Zucchini, Sauteed Zucchini and Peas,NO
 TortillaChicken.txt,Chicken,Tortilla Chicken,YES
-FriedAnchovy.txt,Anchovy,Fried Anchovy,NO
