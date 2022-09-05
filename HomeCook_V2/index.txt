@@ -12,5 +12,5 @@ PiriPiriTurkeyPeppers.txt,Turkey,Piri Piri Turkey Stuffed Peppers, YES
 RoastedAsparagus.txt,Asparagus,Roasted Asparagus with Vinagrette,YES
 RoastedBrusselSprouts.txt,Brussel Sprouts,Bang-bang roasted Brussel Sprouts,YES
 RoastedMushrooms.txt,Mushroom,Thyme Roasted Mushrooms,YES
-SautedZucchini.txt,Zucchini, Sauteed Zucchini and Peas,NO
+SautedZucchini.txt,Zucchini,Sauteed Zucchini and Peas,NO
 TortillaChicken.txt,Chicken,Tortilla Chicken,YES
